@@ -42,8 +42,6 @@ const accessChat = asyncHandler(async (req, res) => {
         "-password"
       );
 
-      console.log("FULL CHAT: ", fullChat);
-
       res.status(200).send(fullChat);
     } catch (error) {
       res.status(400);

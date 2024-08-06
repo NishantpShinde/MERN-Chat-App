@@ -96,13 +96,9 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      console.log("BEFORE AXIOS", userId);
       const { data } = await axios.post("/api/chat", { userId }, config);
-      console.log("AFTER AXIOS");
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
-
-      console.log("NEW CHAT: ", data);
 
       setSelectedChat(data);
       setLoadingChat(false);
